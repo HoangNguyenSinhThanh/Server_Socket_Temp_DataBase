@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1722873086 source:e:\code block\socket\server_database\server_database\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<stdbool.h>
+	<time.h>
+	"Server_Func/Server_Func.h"
+
+1722878150 e:\code block\socket\server_database\server_database\server_func\server_func.h
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<stdbool.h>
+	<time.h>
+
+1722878254 source:e:\code block\socket\server_database\server_database\server_func\server_func.c
+	<stdio.h>
+	<stdint.h>
+	<stdbool.h>
+	<string.h>
+	<openssl/sha.h>
+	"Server_Func.h"
+
