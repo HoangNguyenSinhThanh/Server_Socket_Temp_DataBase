@@ -5,6 +5,9 @@
 #include <time.h>
 #include "Server_Func/Server_Func.h"
 
+#define VERSION_LINKLIST
+//#define VERSION_TXTDATABASE
+
 struct tm *localTime;
 time_t rawTime;
 
@@ -32,19 +35,35 @@ int main()
         switch(cha_Button){
             case 'a':
                 server_PrintGuideLine();
-                server_SignUp();
+                #ifdef VERSION_LINKLIST
+                    server_SignUp();
+                #elifdef VERSION_TXTDATABASE
+                    server_SignUp_txt();
+                #endif
                 break;
             case 'b':
                 server_PrintGuideLine();
-                server_LogIn();
+                #ifdef VERSION_LINKLIST
+                    server_LogIn();
+                #elifdef VERSION_TXTDATABASE
+                    server_LogIn_txt();
+                #endif
                 break;
             case 'c':
                 server_PrintGuideLine();
-                server_FindUserWithName();
+                #ifdef VERSION_LINKLIST
+                    server_FindUserWithName();
+                #elifdef VERSION_TXTDATABASE
+                    server_FindUserWithName_txt();
+                #endif
                 break;
             case 'd':
                 server_PrintGuideLine();
-                server_ListUser();
+                #ifdef VERSION_LINKLIST
+                    server_ListUser();
+                #elifdef VERSION_TXTDATABASE
+                    server_ListUser_txt();
+                #endif
                 break;
             case 'q':
                 system("cls");

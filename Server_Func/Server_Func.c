@@ -249,6 +249,23 @@ bool server_CheckUserWithLoginName(char *loginName, char *passHashed)
     return exist_UserAccCount;
 }
 
+void server_SignUp_txt()
+{
+
+}
+void server_LogIn_txt()
+{
+
+}
+void server_FindUserWithName_txt()
+{
+
+}
+void server_ListUser_txt()
+{
+
+}
+
 bool server_CheckEmptyList()
 {
     bool checkEmpList = true;

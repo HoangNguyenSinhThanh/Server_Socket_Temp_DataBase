@@ -29,3 +29,8 @@ void server_LogIn();
 void server_FindUserWithName();
 void server_ListUser();
 bool server_CheckEmptyList();
+
+void server_SignUp_txt();
+void server_LogIn_txt();
+void server_FindUserWithName_txt();
+void server_ListUser_txt();
