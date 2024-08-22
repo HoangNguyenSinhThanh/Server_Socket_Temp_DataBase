@@ -59,6 +59,11 @@ void server_LogIn()
     unsigned char passHashed[32];
     bool login_name_exist = false;
     bool check_password = false;
+    if(server_CheckEmptyList())
+    {
+        printf("\nList user is empty!");
+        return;
+    }
     printf("Enter your login name: ");
     scanf("%s", login_name);
     login_name_exist = server_CheckUserWithLoginName(login_name, passHashed);
@@ -242,4 +247,14 @@ bool server_CheckUserWithLoginName(char *loginName, char *passHashed)
         }
     }
     return exist_UserAccCount;
+}
+
+bool server_CheckEmptyList()
+{
+    bool checkEmpList = true;
+    if(head != NULL)
+    {
+        checkEmpList = false;
+    }
+    return checkEmpList;
 }

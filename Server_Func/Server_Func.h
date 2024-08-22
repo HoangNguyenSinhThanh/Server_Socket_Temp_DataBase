@@ -28,3 +28,4 @@ void server_SignUp();
 void server_LogIn();
 void server_FindUserWithName();
 void server_ListUser();
+bool server_CheckEmptyList();
