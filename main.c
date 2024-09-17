@@ -5,8 +5,8 @@
 #include <time.h>
 #include "Server_Func/Server_Func.h"
 
-#define VERSION_LINKLIST
-//#define VERSION_TXTDATABASE
+//#define VERSION_LINKLIST
+#define VERSION_TXTDATABASE
 
 struct tm *localTime;
 time_t rawTime;
@@ -27,6 +27,8 @@ int main()
     printf("Time %d - %d - %d\n", localTime->tm_mday, localTime->tm_mon + 1, localTime->tm_year + 1900);
     server_PrintGuideLine();
 
+    // Open data base
+
     char cha_Button = '0';
 
     while(cha_Button != 'q'){
@@ -37,32 +39,34 @@ int main()
                 server_PrintGuideLine();
                 #ifdef VERSION_LINKLIST
                     server_SignUp();
-                #elifdef VERSION_TXTDATABASE
-                    server_SignUp_txt();
+                #else
+                    server_SignUp_DataCSV();
+
                 #endif
                 break;
             case 'b':
                 server_PrintGuideLine();
                 #ifdef VERSION_LINKLIST
                     server_LogIn();
-                #elifdef VERSION_TXTDATABASE
-                    server_LogIn_txt();
+                #else
+                    server_LogIn_DataCSV();
                 #endif
                 break;
             case 'c':
                 server_PrintGuideLine();
                 #ifdef VERSION_LINKLIST
                     server_FindUserWithName();
-                #elifdef VERSION_TXTDATABASE
-                    server_FindUserWithName_txt();
+                #else
+                    server_FindUserWithName_DataCSV();
+
                 #endif
                 break;
             case 'd':
                 server_PrintGuideLine();
                 #ifdef VERSION_LINKLIST
                     server_ListUser();
-                #elifdef VERSION_TXTDATABASE
-                    server_ListUser_txt();
+                #else
+                    server_ListUser_DataCSV();
                 #endif
                 break;
             case 'q':
